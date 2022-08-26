@@ -1,0 +1,8 @@
+## Notes
+# A; B       # Run A and then B, regardless of success of A
+# A && B  # Run B if A succeeded
+# A || B     # Run B if A failed
+# A &        # Run A in background.
+# The concatenate operator “\” s used to concatenate lines
+
+# Marked as “NI” are normally installed in Digital Ocean Droplet
