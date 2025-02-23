@@ -142,7 +142,7 @@
 
 # Copy the files of "TEST Project"
     cecho "GREEN" "Master-Coders: Download files of TEST PROJECT"
-    sudo git clone https://github.com/pablodonayre/Execute_Docker WebPage;
+    sudo git clone https://github.com/pablodonayre/WebPage.git WebPage;
     sudo mv WebPage /home/$new_user/;
 
 
