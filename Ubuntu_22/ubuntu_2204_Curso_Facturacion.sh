@@ -5,7 +5,7 @@
 ## Master-Coders
 ## Tested on Ubuntu 22.04 (on Digital Ocean's VPS)
 ## git clone git@github.com:pablodonayre/Automatic_Linux_Server.git
-#
+## The use od "sudo" if you are root its not required
 #  
 
 
@@ -139,6 +139,11 @@
     echo alias dock-del-all=/home/$new_user/Execute/docker/docker-delete-all.sh >> /home/$new_user/.bashrc &&
     echo alias dock-del-img=/home/$new_user/Execute/docker/docker-delete-images.sh >> /home/$new_user/.bashrc &&
     echo alias dock-del-vol=/home/$new_user/Execute/docker/docker-delete-dangling_volumes.sh >> /home/$new_user/.bashrc;
+
+# Copy the files of "TEST Project"
+    cecho "GREEN" "Master-Coders: Download files of TEST PROJECT"
+    sudo git clone https://github.com/pablodonayre/Execute_Docker WebPage;
+    sudo mv WebPage /home/$new_user/;
 
 
 # Copy the files of "Facturacion Course Project"
