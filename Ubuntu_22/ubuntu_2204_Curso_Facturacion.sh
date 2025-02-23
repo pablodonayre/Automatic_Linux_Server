@@ -144,6 +144,8 @@
     cecho "GREEN" "Master-Coders: Download files of TEST PROJECT"
     sudo git clone https://github.com/pablodonayre/WebPage.git WebPage;
     sudo mv WebPage /home/$new_user/;
+    sudo chmod -R 755 /home/$new_user/WebPage &&
+    sudo chown -R $new_user:$new_user /home/$new_user/WebPage;
 
 
 # Copy the files of "Facturacion Course Project"
@@ -157,26 +159,30 @@
 # Install Docker
     cecho "GREEN" "Master-Coders: Install docker"
 
-    # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
-    sudo apt install apt-transport-https ca-certificates curl software-properties-common &&
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg &&
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null &&
-    sudo apt update &&
-    apt-cache policy docker-ce &&
-    sudo apt install -y docker-ce -y;
+    # # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
+    # sudo apt install apt-transport-https ca-certificates curl software-properties-common &&
+    # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg &&
+    # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null &&
+    # sudo apt update &&
+    # apt-cache policy docker-ce &&
+    # sudo apt install -y docker-ce -y;
 
-    # Config sudo docker (avoid use of sudo)
-    sudo usermod -a -G docker $new_user;
+    # # Config sudo docker (avoid use of sudo)
+    # sudo usermod -a -G docker $new_user;
+
+    sudo apt install docker -y;
+    sudo docker version;
 
 
 # Install docker-compose
     cecho "GREEN" "Master-Coders: Install docker-compose"
 
-    # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04
-    # Dated Apr 26 2022: At the time of this writing, the most current stable version is 2.3.3.
-    mkdir -p ~/.docker/cli-plugins/ &&
-    curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose &&
-    chmod +x ~/.docker/cli-plugins/docker-compose &&
+    # # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04
+    # # Dated Apr 26 2022: At the time of this writing, the most current stable version is 2.3.3.
+    # mkdir -p ~/.docker/cli-plugins/ &&
+    # curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose &&
+    # chmod +x ~/.docker/cli-plugins/docker-compose &&
+    sudo apt install docker-compose -y;
     docker compose version;
 
 
