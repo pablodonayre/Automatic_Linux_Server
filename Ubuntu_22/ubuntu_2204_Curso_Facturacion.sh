@@ -168,7 +168,7 @@
     # sudo apt install -y docker-ce -y;
 
     # # Config sudo docker (avoid use of sudo)
-    # sudo usermod -a -G docker $new_user;
+    sudo usermod -a -G docker $new_user;
 
     sudo apt install docker -y;
     sudo docker version;
